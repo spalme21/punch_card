@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-def home(request):
-    return HttpResponse("Welcome to Punch Card")
+def index(request):
+    """The home page for punch card"""
+    return render(request, 'punch_card/index.html')
