@@ -7,4 +7,6 @@ app_name = 'punch_card'
 urlpatterns = [
     # Home page
     path('', views.index, name='index'),
+    # Roster page
+    path('roster/', views.roster, name='roster')
 ]
