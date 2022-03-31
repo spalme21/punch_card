@@ -13,4 +13,6 @@ urlpatterns = [
     path('new_client/', views.new_client, name='new_client'),
     # Edit client page
     path('edit_client/<int:client_id>', views.edit_client, name='edit_client'),
+    # View client page
+    path('client/<int:client_id>', views.view_client, name='client')
 ]

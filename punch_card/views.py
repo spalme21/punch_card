@@ -39,7 +39,14 @@ def edit_client(request, client_id):
         form = ClientForm(instance=client, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('punch_card:roster')
+            return redirect('punch_card:client', client_id=client.id)
 
     context = {'client': client, 'form': form}
     return render(request, 'punch_card/edit_client.html', context)
+
+def view_client(request, client_id):
+    """View a client's info"""
+    client = Client.objects.get(id=client_id)
+    context = {"client": client}
+    return render(request, 'punch_card/client.html', context)
+
