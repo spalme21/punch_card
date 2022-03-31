@@ -8,5 +8,7 @@ urlpatterns = [
     # Home page
     path('', views.index, name='index'),
     # Roster page
-    path('roster/', views.roster, name='roster')
+    path('roster/', views.roster, name='roster'),
+    # New client page
+    path('new_client/', views.new_client, name='new_client'),
 ]

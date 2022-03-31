@@ -1,0 +1,11 @@
+{% extends 'punch_card/base.html' %}
+
+{% block content%}
+    <p>Add a new client:</p>
+
+    <form action="{% url 'punch_card:new_client' %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Add client</button>
+    </form>
+{% endblock %}
