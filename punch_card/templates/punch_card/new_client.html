@@ -6,6 +6,6 @@
     <form action="{% url 'punch_card:new_client' %}" method='post'>
         {% csrf_token %}
         {{ form.as_p }}
-        <button name="submit">Add client</button>
+        <button class="btn btn-primary" name="submit">Add client</button>
     </form>
 {% endblock %}
