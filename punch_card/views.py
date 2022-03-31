@@ -26,3 +26,20 @@ def new_client(request):
     # Display a blank or invalid form.
     context = {'form': form}
     return render(request, 'punch_card/new_client.html', context)
+
+def edit_client(request, client_id):
+    """Edit an existing client"""
+    client = Client.objects.get(id=client_id)
+
+    if request.method != 'POST':
+        # Initial request; pre-fill form with the current entry.
+        form = ClientForm(instance=client)
+    else:
+        # POST data submitted; process data.
+        form = ClientForm(instance=client, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('punch_card:roster')
+
+    context = {'client': client, 'form': form}
+    return render(request, 'punch_card/edit_client.html', context)

@@ -11,4 +11,6 @@ urlpatterns = [
     path('roster/', views.roster, name='roster'),
     # New client page
     path('new_client/', views.new_client, name='new_client'),
+    # Edit client page
+    path('edit_client/<int:client_id>', views.edit_client, name='edit_client'),
 ]
