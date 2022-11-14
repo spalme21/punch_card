@@ -10,3 +10,4 @@ class Client(models.Model):
     def __str__(self):
         """Return a string representation of the model."""
         return f'{self.last_name}, {self.first_name}'
+        

@@ -49,4 +49,4 @@ def view_client(request, client_id):
     client = Client.objects.get(id=client_id)
     context = {"client": client}
     return render(request, 'punch_card/client.html', context)
-
+    
